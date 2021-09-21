@@ -600,7 +600,13 @@ function View(params) {
         }
       },
       set: function (value) {
+        const NativeLog = requireClass('android.util.Log');
+        NativeLog.d("TESTID", "resource ---> "+ value);
+
         const id = activity.getResourceId(value);
+        
+        NativeLog.d("TESTID", "resource ID ---> "+ id);
+
         if (id > 0) {
           this.nativeObject.setId(id);
         }
